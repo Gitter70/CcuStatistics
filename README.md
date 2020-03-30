@@ -2,6 +2,9 @@
 
 #### Create and update CCU-Historian min/max/avg/sum statistic data points for hours/days/weeks/months/years
 
+This programm will add additional tables to the CCU-Historian database and modify the DATA_POINTS table.
+Create a backup of the database before running this the first time, use at your own risk.
+
 ##### Usage
 
     CcuStatistics [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
@@ -26,6 +29,6 @@
 
 ##### E.g.
 
-    java -jar CcuStatistics-1.0.jar -host localhost -interface "BidCos-RF" -address "NEQ0862251:1" -identifier "ENERGY_COUNTER" -type "RISE" -factor 0.001 -unit "kWh"
-    java -jar CcuStatistics-1.0.jar -host localhost -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "TEMPERATURE"    -type "OSCILL"
-    java -jar CcuStatistics-1.0.jar -host localhost -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "RAIN_COUNTER"   -type "RISE" -filter 2000
+    java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0862251:1" -identifier "ENERGY_COUNTER" -type "RISE" -factor 0.001 -unit "kWh"
+    java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "TEMPERATURE"    -type "OSCILL"
+    java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "RAIN_COUNTER"   -type "RISE" -filter 2000
