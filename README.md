@@ -32,7 +32,7 @@ For rising only data sources (e.g. energy counters) it will create tables contai
 
 ##### Usage
 
-    CcuStatistics [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
+    java -jar CcuStatistics-1.0-launcher.jar [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
 
 ##### Parameters
 
