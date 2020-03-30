@@ -1,6 +1,6 @@
 ### CcuStatistics
 
-#### Create and update CCU-Historian Min/Max/Avg/Sum statistic data points for hours/days/weeks/months/years
+#### Create and update CCU-Historian min/max/avg/sum statistic data points for hours/days/weeks/months/years
 
 ##### Usage
 
