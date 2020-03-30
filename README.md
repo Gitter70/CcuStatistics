@@ -52,7 +52,7 @@ For rising only data sources (e.g. energy counters) it will create tables contai
     -type <OSCILL|RISE>              OSCILL : Values of the data source may rise and fall (e.g. temperatures) - data points for min, max and average values will be created
                                      RISE   : Values of the data source may only rise (except for overflows, e.g. energy counter) - data points for summed differential values will be created
 
-##### E.g.
+##### Usage examples
 
     java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0862251:1" -identifier "ENERGY_COUNTER" -type "RISE" -factor 0.001 -unit "kWh"
     java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "TEMPERATURE"    -type "OSCILL"
