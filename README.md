@@ -2,8 +2,33 @@
 
 #### Create and update CCU-Historian min/max/avg/sum statistic data points for hours/days/weeks/months/years
 
-This programm will add additional tables to the CCU-Historian database and modify the DATA_POINTS table.
-Create a backup of the database before running this the first time, use at your own risk.
+Note: This programm will add additional tables to the CCU-Historian database and modify the DATA_POINTS table. Create a backup of the database before running this the first time, use at your own risk.
+
+At first run it will create statistic tables and calculate statistic data up to the current time. At consecutive runs it will update the statistic tables.
+
+For oscillating data sources (e.g. temperatures) it will create tables containing
+* minimum of every hour
+* minimum of every day
+* minimum of every week
+* minimum of every month
+* minimum of every year
+* maximum of every hour
+* maximum of every day
+* maximum of every week
+* maximum of every month
+* maximum of every year
+* average of every hour
+* average of every day
+* average of every week
+* average of every month
+* average of every year
+
+For rising only data sources (e.g. energy counters) it will create tables containing
+* sum of every hour
+* sum of every day
+* sum of every week
+* sum of every month
+* sum of every year
 
 ##### Usage
 
