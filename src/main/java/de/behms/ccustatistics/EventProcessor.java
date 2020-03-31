@@ -77,7 +77,7 @@ public class EventProcessor {
                         LocalDateTime nextStatisticInterval = intervalDef.getNextIntervalStart(statisticInterval);
 
                         // If there is an interval data object, process it
-                        if (intervalData != null) {
+                        if (intervalData != null && (statisticInterval.isAfter(timeDef.targetStartTime) || statisticInterval.isEqual(timeDef.targetStartTime))) {
                             // Generate and commit statistic data to database
                             intervalData.generateHourStatisticData(dataPointTarget, new Event(currentTimestamp, currentValue));
                         }
