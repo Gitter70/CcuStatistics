@@ -4,7 +4,9 @@
 
 Note: This programm will add additional tables to the CCU-Historian database and modify the DATA_POINTS table. Create a backup of the database before running this the first time, use at your own risk.
 
-At first run it will create statistic tables and calculate statistic data up to the current time. At consecutive runs it will update the statistic tables.
+At first run it will create statistic tables and calculate statistic data for all events of the selected data point. This may take a lot of time, CPU and memory resources.
+
+At consecutive runs it will only update the statistic tables with newly added events.
 
 For oscillating data sources (e.g. temperatures) it will create tables containing
 * minimum of every hour
