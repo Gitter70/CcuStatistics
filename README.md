@@ -34,6 +34,14 @@ For rising only data sources (e.g. energy counters) it will create tables contai
 
 ##### Usage
 
+In ccu-historian.config set the following options
+
+    database.tcpEnable=true
+    database.tcpPort=9092
+    database.tcpAllowOthers=true
+
+Run CcuStatistics-1.0-launcher.jar with at least Java 11
+
     java -jar CcuStatistics-1.0-launcher.jar [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
 
 ##### Parameters
