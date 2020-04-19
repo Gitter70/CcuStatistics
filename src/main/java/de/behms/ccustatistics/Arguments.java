@@ -21,6 +21,7 @@ public class Arguments {
     private final String DEFAULT_PW = "ccu-historian";
     private final String DEFAULT_FACTOR = "1.0";
     private final String DEFAULT_USER = "sa";
+    private final String DEFAULT_LOG = "2";
 
     private CommandLine commandLine;
 
@@ -94,6 +95,14 @@ public class Arguments {
 
         options.addOption(Option.builder("delete")
                 .desc("Delete target data points instead of creating or updating them")
+                .build());
+
+        // Add log level option
+        options.addOption(Option.builder("log")
+                .hasArg()
+                .argName("level")
+                .desc("Log level 0-4, default: " + DEFAULT_LOG)
+                .type(Integer.class)
                 .build());
 
         // Add source arguments
@@ -195,6 +204,10 @@ public class Arguments {
 
     public boolean getDelete() {
         return commandLine.hasOption("delete");
+    }
+
+    public int getLog() {
+        return Integer.parseInt(commandLine.getOptionValue("log", DEFAULT_LOG));
     }
 
     public String getInterface() {

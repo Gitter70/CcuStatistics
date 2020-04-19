@@ -12,6 +12,8 @@ public class MyLogger {
 
     private final java.util.logging.Logger logger;
 
+    private int logLevel = 2;
+
     public static class Item {
 
         private String string = new String();
@@ -55,6 +57,10 @@ public class MyLogger {
         }
     }
 
+    public static void SetLogLevel(int logLevel) {
+        getMyLogger().logLevel = logLevel;
+    }
+
     public static void Log(int indentLevel, String message) {
         Log(indentLevel, message, new Item[0]);
     }
@@ -64,6 +70,10 @@ public class MyLogger {
     }
 
     public static void Log(int indentLevel, String header, Item... items) {
+        if (indentLevel >= getMyLogger().logLevel) {
+            return;
+        }
+
         String message;
         if (indentLevel > 0) {
             message = String.format("%" + indentLevel * 4 + "s", "") + header;

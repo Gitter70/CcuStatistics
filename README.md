@@ -42,7 +42,7 @@ In ccu-historian.config set the following options
 
 Run CcuStatistics-1.0-launcher.jar with at least Java 11
 
-    java -jar CcuStatistics-1.0-launcher.jar [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
+    java -jar CcuStatistics-1.0-launcher.jar [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] [-log <level>] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
 
 ##### Parameters
 
@@ -56,6 +56,7 @@ Run CcuStatistics-1.0-launcher.jar with at least Java 11
     -unit <name>                     Target data point unit name (e.g. kWh), default: Unit name of the source (e.g. Wh)
     -filter <max value difference>   For data points of type RISE (e.g. RAIN_COUNTER) there may be large value jumps in the database - all jumps larger than this difference are ignored
     -delete                          Delete target data points instead of creating or updating them
+    -log <level>                     Log level 0-4, default: 2
     -interface <name>                CCU-Interface of the device (BidCos-RF, BidCos-Wired, System or SysVar)
     -address <id>                    Serial number: Channel number or system variable ID
     -identifier <id>                 Data point identifier

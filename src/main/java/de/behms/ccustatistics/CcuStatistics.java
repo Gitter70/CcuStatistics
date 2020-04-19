@@ -9,6 +9,9 @@ public class CcuStatistics {
         // Read command line argumens
         Arguments arguments = new Arguments(args, false);
 
+        // Set log level
+        MyLogger.SetLogLevel(arguments.getLog());
+
         // Connect to databse and process
         try (DatabaseDataPoint databaseDataPoint = new DatabaseDataPoint(arguments)) {
             if (arguments.getType() == Arguments.Type.OSCILL) {
