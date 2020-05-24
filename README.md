@@ -49,7 +49,7 @@ Run CcuStatistics-1.0-launcher.jar with at least Java 11
     -host <address>                  Address where CCU-Historian is running, default: localhost
     -port <number>                   Network port of the database interface, default: 9092
     -dir <location>                  Database directory location, default: ./data
-    -db <name>                       Database name, default: history
+    -db <name>                       Database name (without file suffix), default: history
     -user <name>                     Database user, default: sa
     -pw <password>                   Database password, default: ccu-historian
     -factor <value>                  Target data point values will be multiplied by this factor (e.g. 0.001), default: 1.0

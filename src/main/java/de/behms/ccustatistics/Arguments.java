@@ -57,7 +57,7 @@ public class Arguments {
         options.addOption(Option.builder("db")
                 .hasArg()
                 .argName("name")
-                .desc("Database name, default: " + DEFAULT_DB)
+                .desc("Database name (without file suffix), default: " + DEFAULT_DB)
                 .build());
 
         options.addOption(Option.builder("user")
