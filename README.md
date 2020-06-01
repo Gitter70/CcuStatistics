@@ -40,6 +40,10 @@ In ccu-historian.config set the following options
     database.tcpPort=9092
     database.tcpAllowOthers=true
 
+Download the latest JAR file, e.g. https://github.com/Gitter70/CcuStatistics/releases/download/1.0.2/CcuStatistics-1.0-launcher.jar
+
+Copy the JAR to the host where CCU-Historian is running (or any other host that has a network connection to the CCU-Historian host)
+
 Run CcuStatistics-1.0-launcher.jar with at least Java 11
 
     java -jar CcuStatistics-1.0-launcher.jar [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] [-log <level>] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
@@ -57,9 +61,9 @@ Run CcuStatistics-1.0-launcher.jar with at least Java 11
     -filter <max value difference>   For data points of type RISE (e.g. RAIN_COUNTER) there may be large value jumps in the database - all jumps larger than this difference are ignored
     -delete                          Delete target data points instead of creating or updating them
     -log <level>                     Log level 0-4, default: 2
-    -interface <name>                CCU-Interface of the device (BidCos-RF, BidCos-Wired, System or SysVar)
-    -address <id>                    Serial number: Channel number or system variable ID
-    -identifier <id>                 Data point identifier
+    -interface <name>                CCU-Interface of the device (BidCos-RF, BidCos-Wired, CUxD or SysVar) / Column 'Schnittstelle' of the CCU-Historian data point list
+    -address <id>                    Serial number: Channel number or system variable ID / Column 'Adresse' of the CCU-Historian data point list
+    -identifier <id>                 Data point identifier / Column 'Parameter' of the CCU-Historian data point list
     -type <OSCILL|RISE>              OSCILL : Values of the data source may rise and fall (e.g. temperatures) - data points for min, max and average values will be created
                                      RISE   : Values of the data source may only rise (except for overflows, e.g. energy counter) - data points for summed differential values will be created
 

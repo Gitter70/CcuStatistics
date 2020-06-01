@@ -109,21 +109,21 @@ public class Arguments {
         options.addOption(Option.builder("interface")
                 .hasArg()
                 .argName("name")
-                .desc("CCU-Interface of the device (BidCos-RF, BidCos-Wired, System or SysVar)")
+                .desc("CCU-Interface of the device (BidCos-RF, BidCos-Wired, CUxD or SysVar) / Column 'Schnittstelle' of the CCU-Historian data point list")
                 .required(!allOptional)
                 .build());
 
         options.addOption(Option.builder("address")
                 .hasArg()
                 .argName("id")
-                .desc("Serial number: Channel number or system variable ID")
+                .desc("Serial number: Channel number or system variable ID / Column 'Adresse' of the CCU-Historian data point list")
                 .required(!allOptional)
                 .build());
 
         options.addOption(Option.builder("identifier")
                 .hasArg()
                 .argName("id")
-                .desc("Data point identifier")
+                .desc("Data point identifier / Column 'Parameter' of the CCU-Historian data point list")
                 .required(!allOptional)
                 .build());
 
