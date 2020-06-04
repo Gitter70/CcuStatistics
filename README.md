@@ -46,7 +46,7 @@ Copy the JAR to the host where CCU-Historian is running (or any other host that 
 
 Run CcuStatistics-1.0-launcher.jar with at least Java 11
 
-    java -jar CcuStatistics-1.0-launcher.jar [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] [-log <level>] -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE>
+    java -jar CcuStatistics-1.0-launcher.jar -interface <name> -address <id> -identifier <id> -type <OSCILL|RISE> [-host <address>] [-port <number>] [-dir <location>] [-db <name>] [-user <name>] [-pw <password>] [-factor <value>] [-unit <name>] [-filter <max value difference>] [-delete] [-log <level>]
 
 ##### Parameters
 
@@ -69,6 +69,6 @@ Run CcuStatistics-1.0-launcher.jar with at least Java 11
 
 ##### Usage examples
 
-    java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0862251:1" -identifier "ENERGY_COUNTER" -type "RISE" -factor 0.001 -unit "kWh"
-    java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "TEMPERATURE"    -type "OSCILL"
-    java -jar CcuStatistics-1.0-launcher.jar -host localhost -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "RAIN_COUNTER"   -type "RISE" -filter 2000
+    java -jar CcuStatistics-1.0-launcher.jar -interface "BidCos-RF" -address "NEQ0862251:1" -identifier "ENERGY_COUNTER" -type "RISE" -factor 0.001 -unit "kWh"
+    java -jar CcuStatistics-1.0-launcher.jar -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "TEMPERATURE"    -type "OSCILL"
+    java -jar CcuStatistics-1.0-launcher.jar -interface "BidCos-RF" -address "NEQ0294011:1" -identifier "RAIN_COUNTER"   -type "RISE" -filter 2000

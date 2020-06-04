@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Assumptions;
 public class CcuStatisticsTest {
 
     // Set CcuHistorian database IP address for tests to be executed!
-    final static String HOST = "192.168.1.231"; // e.g. 192.168.1.231
+    final static String HOST = ""; // e.g. 192.168.1.231
 
     final static String TABLE_NAME = "D_TEST_RF_NEQ1111111_1_DATA";
     static Database database;
