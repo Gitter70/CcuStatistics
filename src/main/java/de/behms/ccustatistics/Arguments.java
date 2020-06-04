@@ -34,6 +34,37 @@ public class Arguments {
         // Create the Options
         Options options = new Options();
 
+        // Add source arguments
+        options.addOption(Option.builder("interface")
+                .hasArg()
+                .argName("name")
+                .desc("CCU-Interface of the device (BidCos-RF, BidCos-Wired, CUxD or SysVar) / Column 'Schnittstelle' of the CCU-Historian data point list")
+                .required(!allOptional)
+                .build());
+
+        options.addOption(Option.builder("address")
+                .hasArg()
+                .argName("id")
+                .desc("Serial number: Channel number or system variable ID / Column 'Adresse' of the CCU-Historian data point list")
+                .required(!allOptional)
+                .build());
+
+        options.addOption(Option.builder("identifier")
+                .hasArg()
+                .argName("id")
+                .desc("Data point identifier / Column 'Parameter' of the CCU-Historian data point list")
+                .required(!allOptional)
+                .build());
+
+        // Add content type
+        options.addOption(Option.builder("type")
+                .hasArg()
+                .argName("OSCILL|RISE")
+                .desc("OSCILL : Values of the data source may rise and fall (e.g. temperatures) - data points for min, max and average values will be created\n"
+                        + "RISE   : Values of the data source may only rise (except for overflows, e.g. energy counter) - data points for summed differential values will be created")
+                .required(!allOptional)
+                .build());
+
         // Add database arguments
         options.addOption(Option.builder("host")
                 .hasArg()
@@ -105,37 +136,6 @@ public class Arguments {
                 .type(Integer.class)
                 .build());
 
-        // Add source arguments
-        options.addOption(Option.builder("interface")
-                .hasArg()
-                .argName("name")
-                .desc("CCU-Interface of the device (BidCos-RF, BidCos-Wired, CUxD or SysVar) / Column 'Schnittstelle' of the CCU-Historian data point list")
-                .required(!allOptional)
-                .build());
-
-        options.addOption(Option.builder("address")
-                .hasArg()
-                .argName("id")
-                .desc("Serial number: Channel number or system variable ID / Column 'Adresse' of the CCU-Historian data point list")
-                .required(!allOptional)
-                .build());
-
-        options.addOption(Option.builder("identifier")
-                .hasArg()
-                .argName("id")
-                .desc("Data point identifier / Column 'Parameter' of the CCU-Historian data point list")
-                .required(!allOptional)
-                .build());
-
-        // Add content type
-        options.addOption(Option.builder("type")
-                .hasArg()
-                .argName("OSCILL|RISE")
-                .desc("OSCILL : Values of the data source may rise and fall (e.g. temperatures) - data points for min, max and average values will be created\n"
-                        + "RISE   : Values of the data source may only rise (except for overflows, e.g. energy counter) - data points for summed differential values will be created")
-                .required(!allOptional)
-                .build());
-
         // Parse the command line arguments
         try {
             commandLine = parser.parse(options, args);
@@ -160,6 +160,22 @@ public class Arguments {
 
             System.exit(0);
         }
+    }
+
+    public String getInterface() {
+        return commandLine.getOptionValue("interface");
+    }
+
+    public String getAddress() {
+        return commandLine.getOptionValue("address");
+    }
+
+    public String getIdentifier() {
+        return commandLine.getOptionValue("identifier");
+    }
+
+    public Type getType() {
+        return type;
     }
 
     public String getHost() {
@@ -208,21 +224,5 @@ public class Arguments {
 
     public int getLog() {
         return Integer.parseInt(commandLine.getOptionValue("log", DEFAULT_LOG));
-    }
-
-    public String getInterface() {
-        return commandLine.getOptionValue("interface");
-    }
-
-    public String getAddress() {
-        return commandLine.getOptionValue("address");
-    }
-
-    public String getIdentifier() {
-        return commandLine.getOptionValue("identifier");
-    }
-
-    public Type getType() {
-        return type;
     }
 }
