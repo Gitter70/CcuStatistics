@@ -16,7 +16,7 @@ public class CcuStatistics {
         try (DatabaseDataPoint databaseDataPoint = new DatabaseDataPoint(arguments)) {
             if (arguments.getType() == Arguments.Type.OSCILL) {
                 DataPointProcessor.StatisticType statisticTypes[] = {DataPointProcessor.StatisticType.AVG, DataPointProcessor.StatisticType.MIN, DataPointProcessor.StatisticType.MAX};
-                for (var statisticType : statisticTypes) {
+                for (DataPointProcessor.StatisticType statisticType : statisticTypes) {
                     new DataPointProcessor(arguments, databaseDataPoint, statisticType).processDataPoint();
                 }
             } else {
