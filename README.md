@@ -40,7 +40,7 @@ In ccu-historian.config set the following options
     database.tcpPort=9092
     database.tcpAllowOthers=true
 
-Download the latest JAR file, e.g. https://github.com/Gitter70/CcuStatistics/releases/download/1.0.2/CcuStatistics-1.0-launcher.jar
+Download the latest JAR file, e.g. https://github.com/Gitter70/CcuStatistics/releases/download/1.0.3/CcuStatistics-1.0-launcher.jar
 
 Copy the JAR to the host where CCU-Historian is running (or any other host that has a network connection to the CCU-Historian host)
 
