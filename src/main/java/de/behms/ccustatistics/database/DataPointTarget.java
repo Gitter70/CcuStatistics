@@ -28,7 +28,7 @@ public class DataPointTarget extends DataPoint {
     // Create target data point and entry in DATA_POINTS if not existing
     public void prepare(String unit) throws SQLException {
         // Create data point if not existing
-        database.execute("create table if not exists " + name + " (TS datetime, VALUE double, STATE int)");
+        database.execute("create table if not exists " + name + " (TS datetime, \"VALUE\" double, STATE int)");
 
         // Add data point entry to DATA_POINTS if not contained
         RowSet rowSet = database.executeQuery("select * from DATA_POINTS where TABLE_NAME = '" + name + "'");
@@ -80,7 +80,7 @@ public class DataPointTarget extends DataPoint {
     }
 
     public void insertRow(Event event) throws SQLException {
-        database.execute("insert into " + name + " (TS, VALUE, STATE) VALUES ('" + MyLogger.GetTimeString(event.timestamp) + "', " + event.value + ", 2)");
+        database.execute("insert into " + name + " (TS, \"VALUE\", STATE) VALUES ('" + MyLogger.GetTimeString(event.timestamp) + "', " + event.value + ", 2)");
     }
 
     // Delete data point
