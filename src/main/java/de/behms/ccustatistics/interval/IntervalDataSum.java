@@ -31,8 +31,8 @@ public class IntervalDataSum extends IntervalData {
     private static LinkedList<Event> filterNonSteadyIntervals(LinkedList<Event> events, Double maxJump) {
         MyLogger.Log(1, "Filtering non steady intervals");
 
-        LinkedList<Event> resultEvents = new LinkedList();
-        LinkedList<Event> hourIntervalEvents = new LinkedList();
+        LinkedList<Event> resultEvents = new LinkedList<>();
+        LinkedList<Event> hourIntervalEvents = new LinkedList<>();
 
         LocalDateTime predecessorEventInterval = null;
         boolean steadyInterval = false;

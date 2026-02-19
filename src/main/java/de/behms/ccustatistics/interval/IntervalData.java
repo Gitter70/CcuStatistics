@@ -25,7 +25,7 @@ public abstract class IntervalData extends IntervalDef {
         this.lastEventBeforeThisInterval = lastEventBeforeThisInterval;
 
         // All events of the current interval
-        this.events = new LinkedList();
+        this.events = new LinkedList<>();
 
         MyLogger.Log(1, "Creating interval beginning at " + MyLogger.GetTimeString(interval));
         MyLogger.Log(2, "Retrieving DB events");

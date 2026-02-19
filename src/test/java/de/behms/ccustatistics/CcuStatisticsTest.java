@@ -101,7 +101,7 @@ public class CcuStatisticsTest {
         String[] argsArrayCreate = args.toArray(new String[args.size()]);
 
         // Create arguments to delete statistic data
-        List<String> argsListDelete = new ArrayList(args);
+        List<String> argsListDelete = new ArrayList<>(args);
         argsListDelete.add("-delete");
         String[] argsArrayDelete = argsListDelete.toArray(new String[argsListDelete.size()]);
 

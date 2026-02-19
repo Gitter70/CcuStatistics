@@ -66,7 +66,7 @@ public class DataPointProcessor {
         TimeSeries timeSeries = dataPointSource.getTimeSeries(timeDef.retrieveStartTime, null);
 
         // Create event list
-        LinkedList<Event> events = new LinkedList();
+        LinkedList<Event> events = new LinkedList<>();
         while (true) {
             Event event = timeSeries.next();
 
